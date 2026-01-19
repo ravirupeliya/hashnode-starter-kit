@@ -24,7 +24,7 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 				aria-label="Visit Hashnode"
 				className="flex items-center"
 			>
-				<HashnodeSVG className={`h-6 w-6 ${isSidebar ? 'text-black dark:text-white' : 'text-white md:h-8 md:w-8'}`} />
+				<HashnodeSVG className={`h-6 w-6 shrink-0 ${isSidebar ? 'text-black dark:text-white' : 'text-white md:h-8 md:w-8'}`} />
 			</a>
 			<Link
 				href={'/'}
@@ -42,7 +42,7 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 					</>
 				) : (
 					<span
-						className={`block text-2xl font-semibold ${
+						className={`inline-block text-2xl font-semibold leading-none ${
 							isSidebar ? 'text-black dark:text-white' : 'text-white md:text-4xl'
 						}`}
 					>
