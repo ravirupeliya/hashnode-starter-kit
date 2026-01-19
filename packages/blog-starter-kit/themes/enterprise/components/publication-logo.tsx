@@ -2,6 +2,7 @@ import { resizeImage } from '@starter-kit/utils/image';
 import Link from 'next/link';
 import { useAppContext } from './contexts/appContext';
 import { PublicationFragment } from '../generated/graphql';
+import HashnodeSVG from './icons/svgs/HashnodeSVG';
 
 const getPublicationLogo = (publication: PublicationFragment, isSidebar?: boolean) => {
 	if (isSidebar) {
@@ -15,11 +16,20 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 	const PUBLICATION_LOGO = getPublicationLogo(publication, isSidebar);
 
 	return (
-		<h1 className="relative w-full">
+		<h1 className="relative w-full flex flex-row items-center justify-center gap-3">
+			<a
+				href="https://hashnode.com/"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Visit Hashnode"
+				className="flex items-center"
+			>
+				<HashnodeSVG className={`h-6 w-6 ${isSidebar ? 'text-black dark:text-white' : 'text-white md:h-8 md:w-8'}`} />
+			</a>
 			<Link
 				href={'/'}
 				aria-label={`${publication.title} blog home page`}
-				className="flex flex-row items-center justify-center gap-3"
+				className="flex flex-row items-center justify-center"
 			>
 				{PUBLICATION_LOGO ? (
 					<>
