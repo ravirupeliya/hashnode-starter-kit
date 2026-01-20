@@ -13,14 +13,16 @@ export const CoverImage = ({ title, src, slug, priority = false }: Props) => {
 
 	const image = (
 		<div className="relative pt-[52.5%]">
-			<Image
+			<div className="absolute inset-0 bg-cover rounded-lg" style={{ backgroundImage: `url(${src})` }} />
+			{/* <Image
 				src={src}
 				alt={`Cover Image for ${title}`}
 				className="w-full rounded-md border object-cover hover:opacity-90 dark:border-neutral-800"
 				fill
 				unoptimized
 				priority={priority}
-			/>
+				style={{ objectPosition: 'top' }}
+			/> */}
 		</div>
 	);
 	return (

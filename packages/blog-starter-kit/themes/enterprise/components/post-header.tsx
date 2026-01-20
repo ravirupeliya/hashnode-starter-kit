@@ -93,12 +93,14 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
 				</div>
 			</div>
 			{coverImage && (
-				<div className="w-full px-5 sm:mx-0">
-					<CoverImage
-						title={title}
-						src={resizeImage(coverImage, { w: 1600, h: 840, c: 'thumb' })}
-						priority={true}
-					/>
+				<div className="w-full px-5 sm:px-0">
+					<div className="max-w-4xl mx-auto">
+						<CoverImage
+							title={title}
+							src={resizeImage(coverImage, { w: 1600, h: 840, c: 'thumb' })}
+							priority={true}
+						/>
+					</div>
 				</div>
 			)}
 			{isCoAuthorModalVisible && (

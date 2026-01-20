@@ -7,6 +7,10 @@ const GQL_ENDPOINT = process.env.NEXT_PUBLIC_HASHNODE_GQL_ENDPOINT;
 const RSS = () => null;
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+	return {
+		notFound: true,
+	};
+
 	const { res, query } = ctx;
 	const after = query.after ? (query.after as string) : null;
 
