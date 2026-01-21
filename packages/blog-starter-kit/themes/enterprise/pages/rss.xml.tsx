@@ -26,14 +26,14 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			notFound: true,
 		};
 	}
-	const allPosts = publication.posts.edges.map((edge) => edge.node);
+	const allPosts = publication?.posts?.edges.map((edge) => edge.node) ?? [];
 
 	const xml = constructRSSFeedFromPosts(
 		publication,
 		allPosts,
 		after,
-		publication.posts.pageInfo.hasNextPage && publication.posts.pageInfo.endCursor
-			? publication.posts.pageInfo.endCursor
+		publication?.posts?.pageInfo?.hasNextPage && publication?.posts?.pageInfo?.endCursor
+			? (publication?.posts?.pageInfo?.endCursor ?? null)
 			: null,
 	);
 
